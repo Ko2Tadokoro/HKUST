@@ -1,0 +1,30 @@
+/* if (map[currentRow][currentCol] == 0)
+    {
+        cout << "Please enter a valid move" << endl;
+        return INVALID;
+    }
+else if (map[currentRow][currentCol] == 1 || map[currentRow][currentCol] == 3)
+    {//black player
+        if (map[currentRow][currentCol] == 1)
+        {//black_man
+
+        }
+        else if (map[currentRow][currentCol] == 3)
+        {//black_king
+
+        }
+
+    }
+else if (map[currentRow][currentCol] == 2 || map[currentRow][currentCol] == 4)
+    {//red player
+        if (map[currentRow][currentCol] == 2)
+        {//red_man
+
+        }
+        else if (map[currentRow][currentCol] == 4)
+        {//red_king
+
+        }
+
+
+    } */
