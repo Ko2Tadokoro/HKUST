@@ -1,0 +1,115 @@
+=== Course List (Code[Credits]) ===
+COMP1021[3] -> COMP1022P[3] -> COMP1022Q[3] -> COMP2011[4] -> COMP2711[4] -> COMP3021[3] -> COMP4211[3]
+=== Course titles ===
+COMP1021: 3
+COMP1022P: 3
+COMP1022Q: 3
+COMP2011: 4
+COMP2711: 4
+COMP3021: 3
+COMP4211: 3
+=== Pre-requisites ===
+COMP2011: COMP1022P, COMP1022Q
+=== Exclusions ===
+No pre-exclusions
+=== Menu ===
+1: Display the current list
+2: Insert a new course
+3: Insert a pre-requisite
+4: Insert an exclusion
+5: Delete an existing course
+6: Delete an existing pre-requisite
+7: Delete an existing exclusion
+8: Modify a course title
+9: Modify a course credit
+10: Exit without clean up
+11: Exit with clean up
+Enter your option: 6
+Enter the target course code: COMP2011
+Enter the pre-requisite course code: COMP1021
+
+segmentation fault
+ previous_ptr->next = item_ptr->next;
+
+
+///////////////////////////////////////////
+
+=== Course List (Code[Credits]) ===
+COMP1021[3] -> COMP1022P[3] -> COMP1022Q[3] -> COMP2011[4] -> COMP2711[4] -> COMP3021[3] -> COMP4211[3]
+=== Course titles ===
+COMP1021: 3
+COMP1022P: 3
+COMP1022Q: 3
+COMP2011: 4
+COMP2711: 4
+COMP3021: 3
+COMP4211: 3
+=== Pre-requisites ===
+COMP2011: COMP1022Q
+=== Exclusions ===
+No pre-exclusions
+=== Menu ===
+1: Display the current list
+2: Insert a new course
+3: Insert a pre-requisite
+4: Insert an exclusion
+5: Delete an existing course
+6: Delete an existing pre-requisite
+7: Delete an existing exclusion
+8: Modify a course title
+9: Modify a course credit
+10: Exit without clean up
+11: Exit with clean up
+Enter your option: 3
+Enter the target course code: COMP1021 
+Enter the pre-requisite course code: COMP1021
+Cannot insert a pre-requisite to the same course COMP1021
+=== Menu ===
+1: Display the current list
+2: Insert a new course
+3: Insert a pre-requisite
+4: Insert an exclusion
+5: Delete an existing course
+6: Delete an existing pre-requisite
+7: Delete an existing exclusion
+8: Modify a course title
+9: Modify a course credit
+10: Exit without clean up
+11: Exit with clean up
+Enter your option: 3
+Enter the target course code: COMP2011
+Enter the pre-requisite course code: COMP1021
+Inserted a pre-requisite COMP2011, COMP1021
+=== Course List (Code[Credits]) ===
+COMP1021[3] -> COMP1022P[3] -> COMP1022Q[3] -> COMP2011[4] -> COMP2711[4] -> COMP3021[3] -> COMP4211[3]
+=== Course titles ===
+COMP1021: 3
+COMP1022P: 3
+COMP1022Q: 3
+COMP2011: 4
+COMP2711: 4
+COMP3021: 3
+COMP4211: 3
+=== Pre-requisites ===
+COMP2011: COMP1021
+=== Exclusions ===
+No pre-exclusions
+
+//above done
+
+==22719==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 2 object(s) allocated from:
+    #0 0x7f70b0250737 in operator new(unsigned long) ../../../../gcc-11.2.0/libs                                                                                                             anitizer/asan/asan_new_delete.cpp:99
+    #1 0x401fce in ll_createItem(Course*, CourseItem*) /homes/wchoae/pa3.cpp:76
+    #2 0x406a15 in ll_insert_prerequisite(Course*, char const*, char const*) /ho                                                                                                             mes/wchoae/pa3.cpp:549
+    #3 0x403802 in main /homes/wchoae/pa3.cpp:315
+    #4 0x7f70ae8fad84 in __libc_start_main (/lib64/libc.so.6+0x3ad84)
+
+ll_insert_prerequisite isn't supposed to ll_createItem 
+
+when prerequisite already exists
+
+insert 2 times under the mentioned situation -> 2 objects leaked
+
+//done
